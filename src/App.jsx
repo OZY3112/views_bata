@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import MoviesPage from "./pages/MoviesPage"
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+
 
 function App() {
   const [searchTerm, setSeachTerm] = useState()
@@ -22,17 +24,19 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-      <MoviesPage/>
-      {
-       !loading &&
-        movies?.Search?.map((movie) => (
-          <>
-            <img src={movie.Poster} alt="" />
-          </>
-        ))
-      }
-    </div>
+    <Router>
+        <div className="App">
+          <MoviesPage/>
+          {
+            !loading &&
+            movies?.Search?.map((movie) => (
+              <>
+                <img src={movie.Poster} alt="" />
+              </>
+            ))
+          }
+        </div>
+    </Router>
   )
 }
 
