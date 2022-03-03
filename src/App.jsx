@@ -28,7 +28,7 @@ function App() {
     <Router>
         <div className="App">
           <Navbar/>
-          <MoviesPage setSearchTerm={setSearchTerm} onSearch={onSearch} movies={movies} loading={loading} />
+          <MoviesPage setSearchTerm={setSearchTerm} searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading} />
            
         </div>
     </Router>

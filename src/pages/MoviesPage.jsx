@@ -2,7 +2,7 @@ import React from 'react'
 import {IoMdSearch} from 'react-icons/io'
 import bg from '../assests/bg.jpg'
 import MovieResults from '../compos/MovieResults'
-export default function MoviesPage({setSearchTerm, onSearch, movies, loading}) {
+export default function MoviesPage({setSearchTerm, onSearch, movies, searchTerm, loading}) {
   return (
     <section id="moviespage">
       <img src={bg} alt="" className="movies__bg--img" />
@@ -20,7 +20,7 @@ export default function MoviesPage({setSearchTerm, onSearch, movies, loading}) {
           </div>
         </div>
       </div>
-      <MovieResults loading={loading} movies={movies} />
+      <MovieResults loading={loading} movies={movies} searchTerm={searchTerm} />
     </section>
   )
 }
