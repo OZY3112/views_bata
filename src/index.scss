@@ -125,12 +125,15 @@ a {
   }
 }
 #moviespage{
+  .movies__bg--img{
+    width: 100%;
+    position: fixed;
+    z-index: -1000;
+  }
   .movie__search--section--cont{
     position: relative;
-    height: 500px;
-    background-image: url('./assests/bg.jpg');
-    background-size: 100%;
-    background-position: 0%;
+    height: 400px;
+    overflow: hidden;
     .movies__section--title--cont{
       .movies__section--title{
         padding-top: 3rem;
@@ -140,24 +143,27 @@ a {
       }
     }
     .movies__search-bar--cont{
-      position: relative;
+      height: 100%;
       .movies__search-bar{
         position: absolute;
         transform: translate(-50%, -50%);
         border: none;
         border-radius: 50px;
         left: 50%;
-        top: 100%;
+        top: 50%;
         padding: 1rem;
         width: 500px;
         height: 50px;
+        font-size: 1.4rem;
         background: rgb(167, 167, 167);
       }
       .movies__search-bar--icon--cont{
-        position: absolute;
         color: $light;
         right: 20px;
       }
     }
   }
+}
+#movies__results{
+  background: $light;
 }

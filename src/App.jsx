@@ -10,9 +10,9 @@ function App() {
   const [movies, setMovies] = useState([]); 
   const [loading, setLoading] = useState(false);
 
-  const handleFetchMovies = async(searchTerm) => {
+  const handleFetchMovies = async() => {
     setLoading(true)
-    const  data  = await axios.get(`http://www.omdbapi.com/?s=fast&apikey=d882ad9a`)
+    const  data  = await axios.get(`http://www.omdbapi.com/?s=${searchTerm}&apikey=d882ad9a`)
     setMovies(data.data)
     console.log(movies)
     setLoading(false)
@@ -28,15 +28,8 @@ function App() {
     <Router>
         <div className="App">
           <Navbar/>
-          <MoviesPage/>
-          {/* {
-            !loading &&
-            movies?.Search?.map((movie) => (
-              <>
-                <img src={movie.Poster} alt="" />
-              </>
-            ))
-          } */}
+          <MoviesPage setSearchTerm={setSearchTerm} onSearch={onSearch} movies={movies} loading={loading} />
+           
         </div>
     </Router>
   )
