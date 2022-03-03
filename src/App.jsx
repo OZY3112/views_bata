@@ -6,7 +6,7 @@ import Navbar from "./compos/Navbar"
 
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState()
+  const [searchTerm, setSearchTerm] = useState("")
   const [movies, setMovies] = useState([]); 
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +28,7 @@ function App() {
     <Router>
         <div className="App">
           <Navbar/>
-          <MoviesPage setSearchTerm={setSearchTerm} searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading} />
+          <MoviesPage setSearchTerm={setSearchTerm}  searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading} />
            
         </div>
     </Router>
