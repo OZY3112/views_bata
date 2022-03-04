@@ -43,7 +43,7 @@ export default function MovieResults({loading, movies: initialMovies, searchTerm
           </div>
           :
           initialMovies?.Search?.map((movie) => (
-          <Link to={`/movie/${movie.imdbID}`} className='results__moves--poster--anchor' 
+          <Link to={`/movie/${movie.imdbID}`} className='results__moves--poster--anchor' key={movie.imdbID}
           onClick={(e) => 
           {
             setChosenMovie(movie.imdbID)

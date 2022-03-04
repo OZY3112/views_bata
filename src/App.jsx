@@ -37,10 +37,14 @@ function App() {
     <Router>
         <div className="App">
           <Navbar/>
+
           <MoviesPage setSearchTerm={setSearchTerm} setMovies={setMovies}  setChosenMovie={setChosenMovie}
           searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading}  handleFetchMovieId={handleFetchMovieId} />
+          
           <Routes>
+
            <Route path={`/movie/:id`} element={<MovieInfo/>} />
+
           </Routes>
         </div>
     </Router>
