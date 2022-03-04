@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Loader } from '@mantine/core';
 import { Link } from 'react-router-dom';
-export default function MovieResults({loading, movies: initialMovies, searchTerm,
-   setMovies, handleFetchMovieId, chosenMovie, setChosenMovie}) {
+export default function MovieResults({loading, movies: initialMovies, searchTerm, setMovies, handleFetchMovieId, setChosenMovie}) {
   const [initialMoviesState, setInitialMoviesState] = useState(initialMovies);
   const handleMovieSorting = (filter) => {
     if(filter === 'SERIES'){
@@ -45,7 +44,7 @@ export default function MovieResults({loading, movies: initialMovies, searchTerm
           :
           initialMovies?.Search?.map((movie) => (
 
-          <Link to={`/movie/${chosenMovie}`} className='results__moves--poster--anchor' key={movie.imdbID}
+          <Link to={`/movie/${movie.imdbID}`} className='results__moves--poster--anchor' key={movie.imdbID}
 
           onClick={() =>  {handleFetchMovieId(); setChosenMovie(movie.imdbID)}} >
 

@@ -195,7 +195,12 @@ a {
     .results__moves--poster--anchor{
       width: 20%;
       height: 100%;
+      overflow: hidden;
       .results__moves--poster{
+        transition: 300ms;
+        &:hover{
+          scale: 1.05;
+        }
         width: 100%;
         height: 100%;
       }
