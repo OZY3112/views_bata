@@ -1,43 +1,38 @@
 import React from 'react'
 
-export default function MovieInfo({chosenMovieInfo}) {
+export default function MovieInfo({chosenMovieInfo, chosenMovie}) {
   return (
-      <section id="movie__info">
-        <div className="movieinfo__wrapper">
+      <section id="movie__info">   
+      {
+        chosenMovieInfo?.Search?.map((_, index) => (
+
+          <div className="movieinfo__wrapper" key={chosenMovie}>
           <div className="movieinfo__movie--poster">
-          {
-            chosenMovieInfo?.Search?.map(movie => (
-              <img src={movie.Poster} alt="" />
-            ))
-          }
+              <img src={chosenMovieInfo.Poster} alt=""  />
           </div> 
               sasdasd
           <div className="movieinfo__description--wrapper">
-            {
-              chosenMovieInfo?.Search?.map(movie => (
-                <figure className="movieinfo__description--cont">
+                <figure className="movieinfo__description--cont"  >
                    <h3 className="movieinfo__movie--title">
-                     {movie.Title}
+                     {chosenMovieInfo.Title}
                    </h3>  
                    <div className="movieinto__movie--release-date">
-                    Release date: {movie.Released}
+                    Release date: {chosenMovieInfo.Released}
                    </div>
                    <div className="movieinto__movie--genre">
-                     Genre: {movie.Genre}
+                     Genre: {chosenMovieInfo.Genre}
                    </div>
                    <div className="movieinto__movie--genre">
-                   Rating {movie.Ratings}
+                   Rating {chosenMovieInfo.Ratings}
                    </div>
                    <div className="movieinto__movie--plot">
-                     plot: {movie.Plot} 
+                     plot: {chosenMovieInfo.Plot} 
                     </div>
                 </figure>
-              ))
-            }
           </div>
-          
         </div>
-        
+            ))
+        }
       </section>
     )
 }

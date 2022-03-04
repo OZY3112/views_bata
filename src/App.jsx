@@ -1,15 +1,14 @@
 import axios from "axios"
-import { useEffect, useState, useLayoutEffect } from "react"
+import { useEffect, useState } from "react"
 import MoviesPage from "./pages/MoviesPage"
-import {BrowserRouter as Router, Routes, Route, useParams} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Navbar from "./compos/Navbar"
 import MovieInfo from "./pages/MovieInfo"
 import LandingPage from "./pages/LandingPage"
 
 
 function App() {
-  const {id} = useParams()
-  const [searchTerm, setSearchTerm] = useState(id)
+  const [searchTerm, setSearchTerm] = useState("")
   const [movies, setMovies] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [chosenMovie, setChosenMovie] = useState();
@@ -49,7 +48,7 @@ function App() {
           searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading}  handleFetchMovieId={handleFetchMovieId} />} />
 
            {/* <Route path={`/movie/:imdbID`} element={<MovieInfo chosenMovieInfo={chosenMovieInfo} />} /> */}
-           <Route path={`/movie`} element={<MovieInfo chosenMovieInfo={chosenMovieInfo} />} />
+           <Route path={`/movie`} element={<MovieInfo chosenMovie={chosenMovie} chosenMovieInfo={chosenMovieInfo} />} />
 
           </Routes>
         </div>
