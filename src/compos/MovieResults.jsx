@@ -44,9 +44,9 @@ export default function MovieResults({loading, movies: initialMovies, searchTerm
           :
           initialMovies?.Search?.map((movie) => (
 
-          <Link to={`/movie/${movie.imdbID}`} className='results__moves--poster--anchor' key={movie.imdbID}
+          <Link to={`/movie/`} className='results__moves--poster--anchor' key={movie.imdbID}
 
-          onClick={() =>  {handleFetchMovieId(); setChosenMovie(movie.imdbID)}} >
+          onClick={() =>  {handleFetchMovieId(movie.imdbID); setChosenMovie(movie.imdbID)}} >
 
               {
                loading ? 

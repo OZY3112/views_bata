@@ -21,10 +21,10 @@ function App() {
     setMovies(data.data)
     setLoading(false)
   }
-  const handleFetchMovieId = async() => {
+  const handleFetchMovieId = async(id) => {
     setLoading(true)
-    // const  movieintodata  = await axios.get(`http://www.omdbapi.com/?i=${chosenMovie}&apikey=d882ad9a`)
-    const  movieintodata  = await axios.get(`www.omdbapi.com/?i=tt1596343&apikey=d882ad9a`)
+    const  movieintodata  = await axios.get(`http://www.omdbapi.com/?i=${id}&apikey=d882ad9a`)
+    // const  movieintodata  = await axios.get(`www.omdbapi.com/?i=tt1596343&apikey=d882ad9a`)
     setChosenMovieInfo(movieintodata.data)
     console.log(chosenMovie)
     console.log(chosenMovieInfo)
