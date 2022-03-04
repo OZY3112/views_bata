@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Loader } from '@mantine/core';
 import { Link } from 'react-router-dom';
-export default function MovieResults({loading, movies: initialMovies, searchTerm, setMovies, handleFetchMovieId, setChosenMovie}) {
+export default function MovieResults({loading, movies: initialMovies, searchTerm,
+   setMovies, handleFetchMovieId, chosenMovie, setChosenMovie}) {
   const [initialMoviesState, setInitialMoviesState] = useState(initialMovies);
   const handleMovieSorting = (filter) => {
     if(filter === 'SERIES'){
@@ -43,13 +44,18 @@ export default function MovieResults({loading, movies: initialMovies, searchTerm
           </div>
           :
           initialMovies?.Search?.map((movie) => (
-          <Link to={`/movie/${movie.imdbID}`} className='results__moves--poster--anchor' key={movie.imdbID}
-          onClick={(e) => 
-          {
-            setChosenMovie(movie.imdbID)
-            handleFetchMovieId()
-            }} >
-          <img src={movie.Poster} className='results__moves--poster' alt="" />
+
+          <Link to={`/movie/${chosenMovie}`} className='results__moves--poster--anchor' key={movie.imdbID}
+
+          onClick={() =>  {handleFetchMovieId(); setChosenMovie(movie.imdbID)}} >
+
+              {
+               loading ? 
+               <div className="results__moves--poster--skeleton--cont">
+                 <div className="results__moves--poster--skeleton" />
+                </div> :  <img src={movie.Poster} className='results__moves--poster' alt="" />
+              }
+              
           </Link> 
           ))
         } 

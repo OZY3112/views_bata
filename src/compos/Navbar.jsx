@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../assests/views_logo.svg'
 export default function Navbar() {
   return (
@@ -7,9 +8,9 @@ export default function Navbar() {
             <img src={Logo} alt="" className="nav__logo--img" />
         </figure>
         <ul className="nav__link--list">
-            <li className="nav__link hover-effect hover-effect--main "><a href="" className="nav__link--anchor">Home</a></li>
-            <li className="nav__link hover-effect hover-effect--main "><a href="" className="nav__link--anchor">Find you movie</a></li>
-            <li className="nav__btn"><a href="" className="nav__link--btn">Contact</a></li>
+            <li className="nav__link hover-effect hover-effect--main "><Link to="/" className="nav__link--anchor">Home</Link></li>
+            <li className="nav__link hover-effect hover-effect--main "><Link to="/movies" className="nav__link--anchor">Find you movie</Link></li>
+            <li className="nav__btn"><Link to="" className="nav__link--btn">Contact</Link></li>
         </ul>
     </nav>
   )

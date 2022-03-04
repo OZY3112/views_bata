@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 $light:#eeeeee;
-$dark: #171219;
+$dark: #131313;
 $pri: #082eac;
 html {
   overflow-x: hidden;
@@ -210,11 +210,14 @@ a {
       transform: translate(-50%, -50%);
       position: absolute;
     }
-    // .results__moves--poster--skeleton{
-    //   width: 30%;
-    //   margin-bottom: 1rem;
-    //   height: 500px;
-    //   background: gray;
-    // }
+  }
+  .results__moves--poster--skeleton--cont{
+    width: 100%;
+    .results__moves--poster--skeleton{
+      height: 400px;
+      width: 100%;
+      margin-bottom: 1rem;
+      background: gray;
+    }
   }
 }
