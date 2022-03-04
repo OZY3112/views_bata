@@ -11,6 +11,7 @@ function App() {
   const [movies, setMovies] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [chosenMovie, setChosenMovie] = useState();
+  const [chosenMovieInfo, setChosenMovieInfo] = useState();
 
   const handleFetchMovies = async() => {
     setLoading(true)
@@ -21,7 +22,8 @@ function App() {
   const handleFetchMovieId = async() => {
     setLoading(true)
     const  data  = await axios.get(`http://www.omdbapi.com/?i=${chosenMovie}&apikey=d882ad9a`)
-    setChosenMovie(data.data)
+    setChosenMovieInfo(data.data)
+    console.log(chosenMovieInfo)
     setLoading(false)
   }
   const onSearch = () => {
@@ -38,7 +40,7 @@ function App() {
           <MoviesPage setSearchTerm={setSearchTerm} setMovies={setMovies}  setChosenMovie={setChosenMovie}
           searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading}  handleFetchMovieId={handleFetchMovieId} />
           <Routes>
-           <Route path={`/movie/:id`} component={<MovieInfo/>} />
+           <Route path={`/movie/:id`} element={<MovieInfo/>} />
           </Routes>
         </div>
     </Router>
