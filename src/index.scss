@@ -87,7 +87,9 @@ a {
   width: 100%;
   background-color: $light;
 }
-
+.blue{
+  color: $pri;
+}
 #nav{
   position: absolute;
   z-index: 1000;
@@ -104,9 +106,10 @@ a {
     }
   }
   .nav__link{
+    align-items: center;display: flex;
     .nav__link--anchor{
       font-size: 1.2rem;
-       color: $light;
+      color: $light;
     }
   }
   .nav__btn{
@@ -176,13 +179,6 @@ a {
       font-size: 1.5rem;
       font-weight: 700;
     }
-    .results__bar--selector--cont{
-      .results__bar--selector{
-        margin: 0.1rem;
-        width: fit-content;
-        font-size: 1.4rem;        
-      }
-    }
   }
   .results__movie--results{
     position: relative;
@@ -229,4 +225,55 @@ a {
 
 #movie__info{
   color: $light;
+  .movieinfo--back--link--cont{
+    align-content: center;display: flex;
+    position: absolute;
+    left: 20%;
+    top: -10%;
+    
+    .movieinfo--back--link{
+      font-size: 2rem;
+      font-weight: 700;
+      color: $light;
+    }
+  }
+  .movieinfo__wrapper{
+    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    gap: 5rem;
+    .movieinfo__movie--poster--cont{
+      width: 20%;
+      .movieinfo__movie--poster{
+        width: 100%;
+
+      }
+    }
+    .movieinfo__description--wrapper{
+      .movieinfo__description--cont{
+        max-width: 600px;
+        .movieinfo__movie--title{
+          justify-content: center;
+          display: flex;
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+        .movieinto__movie--release-date{
+          margin-bottom: .5rem;
+          
+        }
+        .movieinto__movie--rating{
+          margin-bottom: 2rem;
+
+        }
+        .movieinto__movie--plot{
+          font-size: 1.2rem;
+          max-width: 500px;
+        }
+      }
+    }
+  }
 }

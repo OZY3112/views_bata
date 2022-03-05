@@ -10,7 +10,7 @@ export default function Navbar() {
         <ul className="nav__link--list">
             <li className="nav__link hover-effect hover-effect--main "><Link to="/" className="nav__link--anchor">Home</Link></li>
             <li className="nav__link hover-effect hover-effect--main "><Link to="/movies" className="nav__link--anchor">Find you movie</Link></li>
-            <li className="nav__btn"><Link to="" className="nav__link--btn">Contact</Link></li>
+            <li className="nav__btn"><button onClink={() => alert("not available")} className="nav__link--btn">Contact</button></li>
         </ul>
     </nav>
   )

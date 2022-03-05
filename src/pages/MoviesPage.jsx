@@ -3,7 +3,7 @@ import bg from '../assests/bg.jpg'
 import MovieResults from '../compos/MovieResults'
 export default function MoviesPage({setSearchTerm, onSearch,
    movies, searchTerm, loading,handleFetchMovieId, setMovies,
-    setChosenMovie, chosenMovie}) {
+    setChosenMovie, chosenMovie, chosenMovieInfo}) {
   return (
     <section id="moviespage">
       <img src={bg} alt="" className="movies__bg--img" />
@@ -14,7 +14,8 @@ export default function MoviesPage({setSearchTerm, onSearch,
           
         </div>
       </div>
-      <MovieResults loading={loading} movies={movies} searchTerm={searchTerm} chosenMovie={chosenMovie}
+      <MovieResults loading={loading} movies={movies} chosenMovieInfo={chosenMovieInfo}
+      searchTerm={searchTerm} chosenMovie={chosenMovie}
       setMovies={setMovies} setChosenMovie={setChosenMovie} handleFetchMovieId={handleFetchMovieId} />
     </section>
   )
