@@ -16,12 +16,14 @@ function App() {
   
   const handleFetchMovies = async() => {
     setLoading(true)
-    const  data  = await axios.get(`http://www.omdbapi.com/?s=${searchTerm}&apikey=d882ad9a`)
-    setMovies(data.data)
+    const  {data}  = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3123e3e88f49c8845544a9a59996b76c&query=${searchTerm}`)
+    setMovies(data.results)
     setLoading(false)
   }
   const handleFetchMovieId = async(id) => {
     setLoading(true)
+    await handleFetchMovies()
+    // https://api.themoviedb.org/3/movie/550?api_key=3123e3e88f49c8845544a9a59996b76c
     const  movieintodata  = await axios.get(`http://www.omdbapi.com/?i=${id}&apikey=d882ad9a`)
     // const  movieintodata  = await axios.get(`www.omdbapi.com/?i=tt1596343&apikey=d882ad9a`)
     setChosenMovieInfo(movieintodata.data)

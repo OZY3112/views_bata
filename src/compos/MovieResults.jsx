@@ -37,22 +37,17 @@ export default function MovieResults({loading, movies: initialMovies, searchTerm
       </div> 
       <div className="results__movie--results">
         {
-          loading ? 
-          <div className="results__loader--cont">
-            <Loader size={50}  color="#082eac" /> 
-          </div>
-          :
-          initialMovies?.Search?.map((movie) => (
+          initialMovies.map((movie) => (
 
-          <Link to={`/movie/`} className='results__moves--poster--anchor' key={movie.imdbID}
+          <Link to={`/movie/`} className='results__moves--poster--anchor' key={movie.id}
 
-          onClick={() =>  {handleFetchMovieId(movie.imdbID); setChosenMovie(movie.imdbID)}} >
+          onClick={() =>  {handleFetchMovieId(movie.id); setChosenMovie(movie.id)}} >
 
               {
                loading ? 
                <div className="results__moves--poster--skeleton--cont">
                  <div className="results__moves--poster--skeleton" />
-                </div> :  <img src={movie.Poster} className='results__moves--poster' alt="" />
+                </div> :  <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className='results__moves--poster' alt="" />
               }
               
           </Link> 

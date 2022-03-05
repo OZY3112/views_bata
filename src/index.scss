@@ -155,7 +155,7 @@ a {
         width: 500px;
         height: 50px;
         font-size: 1.4rem;
-        background: rgb(167, 167, 167);
+        background: $light;
       }
       .movies__search-bar--icon--cont{
         color: $light;
@@ -167,6 +167,7 @@ a {
 #movies__results{
   background: $light;
   
+  min-height: 480px;
   .results__bar--cont{
     display: flex;
     justify-content: space-around;
@@ -191,7 +192,6 @@ a {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    min-height: 25vh;
     .results__moves--poster--anchor{
       width: 20%;
       height: 100%;
