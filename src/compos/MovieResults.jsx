@@ -19,7 +19,7 @@ export default function MovieResults({loading, movies: initialMovies, chosenMovi
 
               {
                loading ? 
-               <div className="results__moves--poster--skeleton--cont">
+               <div className="results__moves--poster--skeleton--cont" key={movie.id} >
                  <div className="results__moves--poster--skeleton" />
                 </div> :  <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className='results__moves--poster' alt="" />
               }

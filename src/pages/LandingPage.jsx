@@ -1,26 +1,34 @@
 import React from 'react'
-
+import {BiSearchAlt2} from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
+import Mansvg from '../compos/ui/Mansvg'
 export default function LandingPage({setSearchTerm, onSearch}) {
+    const nav = useNavigate()
+    const handleLandingSearch = (e) => {
+        onSearch(e)
+        nav('/movies')
+    }
   return (
     <section id="landing">
-            <header>
-                <div className="landing__container">
-                    <div className="landing__description">
-                        <h1 className="landing__description--title">America's most awarded online streaming platform</h1>
-                        <h2 className="landing__description--sub-title">Find your dream show with <span className="blue">Easy View</span></h2>
-                        <div className="landing__form" >
-                            <input
-                                type="text"
-                                placeholder="Search by title"
-                                className="landing__description--input"
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                onKeyUp={(e) => e.key === 'Enter' && onSearch()} />
-                            <div className="landing__search-btn" onClick={() => onSearch()}>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </section>
+    <div className="landing__cont">
+       <div className="section__title--cont">
+           <h1 className="landing__title">
+               Egypt's most awarded <br /> <span className="red"> Movie Watching</span> <br /> Subscription platform.
+           </h1>
+           <h3 className="landing__subtitle">
+               Find your favorite movies at <span className="blue">Easy View</span>.
+           </h3>
+       </div>
+
+       <div className="landing__search-bar">
+            <input type="text" 
+             placeholder='Search for your movies...' 
+             className="ladning__search-bar--input" maxLength={48}
+             onKeyPress={(e) => e.key === 'Enter' && handleLandingSearch(e)}
+             onChange={(e) => setSearchTerm(e.target.value)}/>
+            </div>
+       <div className="mansvg__cont"><Mansvg/></div>
+    </div>
+</section>
   )
 }

@@ -25,13 +25,6 @@ export default function MovieInfo({chosenMovieInfo, chosenMovie}) {
                    </div>
                    <div className="movieinto__movie--rating">
                    Rating: {chosenMovieInfo.vote_average}
-                   {
-                      // new Array(Math.floor(chosenMovieInfo.vote_average/2)).fill(0).map(() => <AiTwotoneStar/>)
-                    }
-                    {
-                      // !Number.isInteger(chosenMovieInfo.vote_average/2) &&  <BsStarHalf/>
-                    }
-                    
                    </div>
                    <div className="movieinto__movie--plot">
                      plot: {chosenMovieInfo.overview} 

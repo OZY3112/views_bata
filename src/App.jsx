@@ -22,10 +22,7 @@ function App() {
   }
   const handleFetchMovieId = async(id) => {
     setLoading(true)
-    await handleFetchMovies()
-    // https://api.themoviedb.org/3/movie/550?api_key=3123e3e88f49c8845544a9a59996b76c
     const  movieintodata  = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=a68a1e716dc10887f9e01a8f4e4ee2b3&language=en-US`)
-    // const  movieintodata  = await axios.get(`www.omdbapi.com/?i=tt1596343&apikey=d882ad9a`)
     setChosenMovieInfo(movieintodata.data)
     console.log(chosenMovie)
     console.log(chosenMovieInfo)
@@ -49,8 +46,7 @@ function App() {
            <Route path={`/movies`} element={<MoviesPage chosenMovie={chosenMovie} setSearchTerm={setSearchTerm} setMovies={setMovies}  setChosenMovie={setChosenMovie}
           searchTerm={searchTerm} onSearch={onSearch} movies={movies} loading={loading}  handleFetchMovieId={handleFetchMovieId} chosenMovieInfo={chosenMovieInfo} />} />
 
-           {/* <Route path={`/movie/:imdbID`} element={<MovieInfo chosenMovieInfo={chosenMovieInfo} />} /> */}
-           <Route path={`/movie/${chosenMovieInfo.id}`} element={<MovieInfo chosenMovie={chosenMovie} chosenMovieInfo={chosenMovieInfo} />} />
+           <Route path={`/movie/:${chosenMovieInfo.id}`} element={<MovieInfo chosenMovie={chosenMovie} chosenMovieInfo={chosenMovieInfo} />} />
 
           </Routes>
         </div>
